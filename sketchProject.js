@@ -45,12 +45,12 @@ $(document).ready(function(){
 	$("#option1").on("click", function(){
 		padContainer.empty();
 		newsides = checkNum(prompt("How many squares per side? (a number between 5 and 60)"));
-		setup(newSides, 1);
+		setup(newsides, 1);
 	});
 	$("#option2").on("click", function(){
 		padContainer.empty();
 		checkNum(prompt("How many squares per side? (a number between 5 and 60)"));
-		setup(newSides,2);
+		setup(newsides,2);
 	});
 
 
