@@ -3,4 +3,13 @@
 	height:600px;
 	border: solid 1px black;
 	margin: 0 auto;
+	overflow: hidden;
+}
+.buttonBar {
+	margin:10px auto;
+	text-align: center;
+}
+
+button {
+	margin-right:15px;
 }
