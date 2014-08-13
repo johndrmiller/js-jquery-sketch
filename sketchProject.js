@@ -34,7 +34,7 @@ $(document).ready(function(){
 	}
 	function checkNum(num){
 		if (5<num && num<60) {
-			newSides=num;
+			return num;
 		} else {
 			checkNum(prompt("Please select a number between 5 and 60"));
 		}
@@ -44,7 +44,7 @@ $(document).ready(function(){
 	}
 	$("#option1").on("click", function(){
 		padContainer.empty();
-		checkNum(prompt("How many squares per side? (a number between 5 and 60)"));
+		newsides = checkNum(prompt("How many squares per side? (a number between 5 and 60)"));
 		setup(newSides, 1);
 	});
 	$("#option2").on("click", function(){
