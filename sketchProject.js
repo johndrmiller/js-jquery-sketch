@@ -30,6 +30,15 @@ $(document).ready(function(){
 					$(this).css({"background-color": newColor});
 				});	
 				break;
+			case 3:
+				padContainer.on("mousemove",".cell", function(){
+					var curColor = $(this).css("background-color");
+					if (curColor=="white" || curColor=="rgb(255,255,255") {
+						var newColor="rgb("+randomCV()+","+randomCV()+","+randomCV()+")";
+						$(this).css({"background-color": newColor });
+					} else
+				})
+				break;
 		}
 	}
 	function checkNum(num){
