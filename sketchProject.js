@@ -31,12 +31,16 @@ $(document).ready(function(){
 				});	
 				break;
 			case 3:
+				$(".cell").data("doesHaveColor",0);
 				padContainer.on("mousemove",".cell", function(){
-					var curColor = $(this).css("background-color");
-					if (curColor=="white" || curColor=="rgb(255,255,255") {
+					var this = $(this);
+					if (this.data("doesHaveColor")==0) {
 						var newColor="rgb("+randomCV()+","+randomCV()+","+randomCV()+")";
-						$(this).css({"background-color": newColor });
-					} else
+						this.css({"background-color": newColor });
+						this.data("doesHaveColor",1);
+					} else {
+						
+					}
 				})
 				break;
 		}
