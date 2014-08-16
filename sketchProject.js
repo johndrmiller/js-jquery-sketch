@@ -30,6 +30,19 @@ $(document).ready(function(){
 					$(this).css({"background-color": newColor});
 				});	
 				break;
+			case 3:
+				$(".cell").data("doesHaveColor",0);
+				padContainer.on("mousemove",".cell", function(){
+					var this = $(this);
+					if (this.data("doesHaveColor")==0) {
+						var newColor="rgb("+randomCV()+","+randomCV()+","+randomCV()+")";
+						this.css({"background-color": newColor });
+						this.data("doesHaveColor",1);
+					} else {
+						
+					}
+				})
+				break;
 		}
 	}
 	function checkNum(num){
