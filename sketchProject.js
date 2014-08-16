@@ -18,30 +18,40 @@ $(document).ready(function(){
 		gameMode(option);
 	}
 	function gameMode(option) {
+		padContainer.off("mouseover");
 		switch (option) {
 			case 1:
-				padContainer.on("mousemove", ".cell", function(){
+				padContainer.on("mouseover", ".cell", function(){
 					$(this).css({"background-color": "black"});
 				});	
 				break;
 			case 2:
-				padContainer.on("mousemove", ".cell", function(){
+				padContainer.on("mouseover", ".cell", function(){
 					var newColor="rgb("+randomCV()+","+randomCV()+","+randomCV()+")";
 					$(this).css({"background-color": newColor});
 				});	
 				break;
 			case 3:
-				$(".cell").data("doesHaveColor",0);
-				padContainer.on("mousemove",".cell", function(){
-					var this = $(this);
-					if (this.data("doesHaveColor")==0) {
+				padContainer.on("mouseover",".cell", function(){
+					var that = $(this);
+					if (that.css("background-color")==="rgb(255, 255, 255)") {
 						var newColor="rgb("+randomCV()+","+randomCV()+","+randomCV()+")";
-						this.css({"background-color": newColor });
-						this.data("doesHaveColor",1);
-					} else {
-						
+						that.css({"background-color": newColor });
+					} else {	
+						var cArray = that.css("background-color").match(/\d+/g);
+						var nArray = [];
+						cArray.forEach(function(element, index, array){
+							var nElement = parseInt(element);
+							if (nElement>25){
+								nElement-=25;
+							} else {
+								nElement = 0;
+							}
+							nArray.push(nElement);
+						});
+						that.css({"background-color": "rgb("+nArray[0]+","+nArray[1]+","+nArray[2]+")"});
 					}
-				})
+				});
 				break;
 		}
 	}
@@ -62,14 +72,12 @@ $(document).ready(function(){
 	});
 	$("#option2").on("click", function(){
 		padContainer.empty();
-		checkNum(prompt("How many squares per side? (a number between 5 and 60)"));
+		newsides = checkNum(prompt("How many squares per side? (a number between 5 and 60)"));
 		setup(newsides,2);
 	});
-
-
-
-
-
-
-
+	$("#option3").on("click", function(){
+		padContainer.empty();
+		newsides = checkNum(prompt("How many squares per side? (a number between 5 and 60)"));
+		setup(newsides,3);
+	});
 });
