@@ -56,10 +56,10 @@ $(document).ready(function(){
 		}
 	}
 	function checkNum(num){
-		if (5<num && num<60) {
+		if (5<=num && num<=60) {
 			return num;
 		} else {
-			checkNum(prompt("Please select a number between 5 and 60"));
+			return checkNum(prompt("Please select a number between 5 and 60"));
 		}
 	}
 	function randomCV(){
