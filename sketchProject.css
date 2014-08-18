@@ -1,7 +1,7 @@
 .padContainer {
 	width:600px;
 	height:600px;
-	border: solid 1px black;
+	border: solid 1px #041D6E;
 	margin: 0 auto;
 	overflow: hidden;
 }
@@ -12,4 +12,10 @@
 
 button {
 	margin-right:15px;
+	color: white;
+	background-color: #041D6E;
+	font-weight: bold;
+	border: solid 1px #041D6E;
+	line-height: 1.5em;
+	cursor:pointer;
 }
